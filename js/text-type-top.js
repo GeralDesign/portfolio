@@ -1,7 +1,7 @@
 const typedText = document.querySelector(".typed-text-top");
 const cursor = document.querySelector(".cursor-top");
 
-const textArrayTop = [ "Wordpress Designer","Front-End Web Developer","Graphic Designer","Web Designer"];
+const textArrayTop = ["Graphic Designer","Web Designer","Wordpress Designer","Front-End Web Developer"];
 const typingDelayTop = 200;
 const erasingDelayTop = 100;
 const newTextDelayTop = 2000; // Delay between current and next text
