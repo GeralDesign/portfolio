@@ -140,7 +140,7 @@ body{
     top: 0;
     width: 100%;
     height: 58px;
-    z-index: 1000;
+    z-index: 99;
     background: var(--light-purple-color);
     display: none;
 }
@@ -343,6 +343,13 @@ body{
     width: 100%;
     height: 7%;
     margin-bottom: 10px;
+}
+.social-cion img{
+    width:23.77px; 
+    height:26.36px;
+}
+.social-cion img:hover{
+    background: var(--dark-color);
 }
 .social-cion a{ 
     text-decoration: none;   
@@ -635,11 +642,12 @@ body{
 
 .works{
     display: flex;
-    position: relative;
+    justify-content: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .works-col2{
     width: 100%;
-    margin-right: 5px;
 }
 .works .work-des{
     border-bottom:1px solid transparent;
@@ -658,7 +666,8 @@ body{
     overflow: hidden;
 }
 .prj-img img{
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     object-fit: contain;
 }
 .project-desc{
@@ -717,6 +726,58 @@ body{
     transform:  scale(1.15);
 }
 
+
+/* ARROW DOWN*/
+.arrow-down{
+    display: flex;
+    justify-content: center;
+}
+.arrows {
+	width: 60px;
+	height: 72px;
+	position: absolute;
+	bottom: 20px;
+}
+
+.arrows path {
+	stroke: var(--purple-color);
+	fill: transparent;
+	stroke-width: 5px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
 /***********CONTACT***********/
 .contact{
     display: flex;
@@ -746,6 +807,39 @@ body{
     color: var(--light-color);
     font-size: 15px;
 }
+.form-control::placeholder{
+    color: var(--light-color);
+}
+.service-needed{
+    color: var(--light-color);
+    padding: 30px 15px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.service-needed label{
+    margin-right: 15px;
+}
+select[name="service"] {
+  width: 100%;
+  margin-top: 15px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--purple-color); /* brand purple border */
+  border-radius: 6px;
+  background-color: var(--dark-purple-color); /* matches form bg */
+  color: var(--light-color); /* white text */
+  appearance: none; /* remove browser arrow */
+  /* background-image: url("data:image/svg+xml,%3Csvg%20fill%3D'%236f42c1'%20height%3D'12'%20viewBox%3D'0%200%2024%2024'%20width%3D'12'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M7%2010l5%205%205-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px; */
+  cursor: pointer;
+  /* transition: border-color 0.3s ease, box-shadow 0.3s ease; */
+}
+
+.message::placeholder{
+    color: var(--light-color);
+}
 form textarea{
     min-height: 100px;
 }
@@ -763,7 +857,7 @@ form textarea{
 }
 .send{
     width: 50%;
-    padding: 10px 30px;
+    padding: 10px 0px;
     border-bottom:1px solid transparent;
     border-image: linear-gradient(45deg,#5437b7,transparent);
     border-image-slice: 1;
@@ -771,10 +865,10 @@ form textarea{
     position: relative;
 }
 .send:hover i{
-    color: var(--dark-color);
+    color: var(--purple-color);
 }
-.send:hover input{
-    color: var(--dark-color);
+.send:hover button{
+    color: var(--purple-color);
 }
 .send i{
     color: var(--light-color);
@@ -782,14 +876,16 @@ form textarea{
     top: 22px;
 }
 .send-btn{
-    padding: 10px 0px;
+    padding: 10px;
     background: transparent;
     border: none;
     outline: none;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     color: var(--light-color);
 }
+
+
 /***********CONTACT END***********/
 
 
@@ -868,4 +964,232 @@ form textarea{
     0%{
         transform: translateY(300px);
     }
+}
+
+
+/***********NEW PROJECT STYLE***********/
+
+.works-container{
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.items-links{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.menu-active{
+    background-color: var(--purple-color);
+}
+.items-links h1{
+    border-radius: 5px;
+    border: 2px solid#5437b7;
+    font-size: 20px;
+    padding: 5px;
+    color: var(--light-color);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+.gallerey{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    padding-bottom: 20px;
+}
+.project-img{
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+}
+/* hover project-thum*/
+.project-img:hover .overlay{
+    top: 0;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background: rgba(33, 33, 49, 0.8);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.overlay h4{
+    color: var(--light-color);
+    font-size: 20px;
+    text-align: center;
+}
+.overlay_btn{
+    display: inline-block;
+    width: fit-content;
+}
+.overlay_btn a{
+    background: var(--purple-color);
+    color: var(--light-color);
+    padding: 7px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 6px;
+}
+.overlay_btn a:hover{
+    background: var(--dark-color);
+}
+.project-thumb{
+    height: 225px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+    /* animation: SclAnimation .5s ease; */
+}
+/* @keyframes SclAnimation {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+} */
+/* .project-thumb:hover{
+    transform: scale(1.1);
+    transition: .4 ease;
+} */
+
+
+.project_modal{
+    display: none;
+    background: rgba(33, 33, 49, 0.98);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 20px 200px 0px 200px;
+}
+.modal-inner{
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    /* min-height: 100vh; */
+}
+.project-modal-col1{
+    width: 35%;
+    display: flex;
+    /* overflow-y: auto; */
+}
+.project-modal-col2{
+    width: 65%;
+    height: 100vh;
+    overflow-y: auto;
+}
+.project-modal-col2 img{
+    object-fit: cover;
+    width: 100%;
+}
+.case_study{
+    width: 100%;
+    background: var(--dark-purple-color);
+    padding: 25px;
+    height: 100vh;
+    overflow-y: auto;
+}
+.btn_closed_modal{
+    color: var(--purple-color);
+    cursor: pointer;
+    font-size: 50px;
+    z-index: 2147483647;
+    width: 20%;
+    left: 0;
+    top: 0;
+}
+
+.project_details{
+    margin-bottom: 20px;
+}
+.project_details h2{
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+.project_details .details{
+    font-size: 18px;
+    color: var(--light-blue);
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+.project_details .details span{
+    color: var(--light-color);
+    font-size: 15px;
+    font-weight: 600;
+}
+.details a{
+    color: var(--purple-color);
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.6;
+}
+.overview{
+    margin-bottom: 25px;
+}
+.key_improvements{
+    margin-bottom: 25px;
+}
+.key_imps{
+    display: flex;
+}
+.key_imps .description{
+    color: var(--light-color);
+    font-size: 17px;
+    font-weight: 500;
+}
+.CS_heading{
+    font-size: 18px;
+    color: var(--light-blue);
+    margin-bottom: 10px;
+}
+.CS_Sub_heading{
+    color: var(--light-color);
+    font-size: 17px;
+    font-weight: 500;
+}
+.iconify{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.key_improvements i{
+    vertical-align: middle;
+    margin-right: 5px;
+    color: var(--light-blue);
+}
+.hire_me_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.hire_me_btn a{
+    background: var(--purple-color);
+    color: var(--light-color);
+    padding: 10px 50px;
+    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+.hire_me_btn a:hover{
+    background: var(--dark-color);
 }

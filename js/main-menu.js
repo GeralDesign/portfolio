@@ -1,4 +1,4 @@
-//NAV MENU TOP
+// NAV MENU TOP
 window.addEventListener('scroll', event =>{
     let nav = document.querySelector('.top-menu');
   
@@ -15,7 +15,7 @@ window.addEventListener('scroll', ()=> {
   sections.forEach( section =>{
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    if(pageYOffset >= sectionTop - sectionHeight / 3){
+    if(pageYOffset >= sectionTop - sectionHeight / 7){
       current = section.getAttribute('id');
     }
   })
@@ -25,4 +25,28 @@ window.addEventListener('scroll', ()=> {
       li.classList.add('active')
     }
   })
-})
+});
+
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth <= 1230) {
+        location.reload();
+    }
+});
+
+
+
+// window.addEventListener('scroll', () => {
+//     const nav = document.querySelector('.top-menu');
+//     const scrollPoint = 50; // how far you scroll before changing color
+
+//     if (window.scrollY > scrollPoint) {
+//         nav.classList.add('scroll');
+//     } else {
+//         nav.classList.remove('scroll');
+//     }
+// });
+
+// document.querySelectorAll('nav ul li').forEach(li => {
+//     li.classList.remove('active');
+// });
