@@ -973,6 +973,7 @@ form textarea{
     padding-left: 30px;
     padding-right: 30px;
     width: 100%;
+    align-items: start;
 }
 
 .items-links{
@@ -998,35 +999,58 @@ form textarea{
 .gallerey{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 20px;
-    padding-bottom: 20px;
+      /* column-gap: 20px;
+      row-gap: 20px;  */
+      /* gap: 20px; */
+      /* padding-bottom: 20px; */
+      /* gap: 10px; */
+      align-items: start;
+      margin-bottom: 20px;
 }
 .project-img{
-    overflow: hidden;
-    border-radius: 8px;
     position: relative;
+    overflow: hidden;
+    /* margin: 10px; */
+    align-items: start;
+    border-radius: 8px;
+}
+.project-img:hover img{
+    transform: scale(1.1);
+}
+.project-thumb{
+    height: 225px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: .4s ease;
+    padding: 10px;
 }
 /* hover project-thum*/
 .project-img:hover .overlay{
-    top: 0;
+    opacity: 1;
 }
 .overlay{
-    height: 100%;
-    width: 100%;
-    background: rgba(33, 33, 49, 0.8);
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 49, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 .overlay h4{
     color: var(--light-color);
     font-size: 20px;
     text-align: center;
+    margin-bottom: 15px;
 }
 .overlay_btn{
     display: inline-block;
@@ -1043,27 +1067,6 @@ form textarea{
 .overlay_btn a:hover{
     background: var(--dark-color);
 }
-.project-thumb{
-    height: 225px;
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    cursor: pointer;
-    /* animation: SclAnimation .5s ease; */
-}
-/* @keyframes SclAnimation {
-    0%{
-        transform: scale(0);
-    }
-    100%{
-        transform: scale(1);
-    }
-} */
-/* .project-thumb:hover{
-    transform: scale(1.1);
-    transition: .4 ease;
-} */
-
 
 .project_modal{
     display: none;
