@@ -1098,8 +1098,10 @@ form textarea{
     overflow-y: auto;
 }
 .project-modal-col2 img{
-    object-fit: contain;
+    /* object-fit: cover; */
     width: 100%;
+    height: auto;
+    display: block;
 }
 .case_study{
     width: 100%;

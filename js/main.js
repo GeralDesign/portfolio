@@ -89,3 +89,13 @@ for (var i = 0; i < li_elements.length; i++) {
   });
 }
 
+
+
+
+
+
+
+
+window.addEventListener("load", () => {
+  window.dispatchEvent(new Event("resize"));
+});
